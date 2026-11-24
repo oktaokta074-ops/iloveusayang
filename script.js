@@ -225,3 +225,4 @@ document.addEventListener("error", e => { if (e.target.tagName === "IMG") swapCa
 document.querySelectorAll("img[data-cat]").forEach(i => { if (i.complete && i.naturalWidth === 0) swapCat(i); });
 
 go("home", false);
+document.querySelectorAll(".page").forEach(p => document.body.appendChild(p));
