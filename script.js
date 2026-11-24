@@ -157,7 +157,7 @@ function popHeart(x, y){
   document.body.appendChild(h); setTimeout(() => h.remove(), 1000);
 }
 function confetti(n = 70){
-  const colors = ["#fbbcc4", "#ff6f91", "#fff", "#ffd1dc", "#f9a8d4"];
+  const colors = ["#bcd6ff", "#6fa8ff", "#fff", "#ffd1dc", "#f9a8d4"];
   for (let i = 0; i < n; i++){
     const c = document.createElement("span");
     c.className = "cf";
