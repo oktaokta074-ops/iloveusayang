@@ -32,11 +32,11 @@ const REASONS = [
  "Being with you just feels like home"
 ];
 const CHEERS = [
- "You’re my favorite person 💙",
- "Hehe, that tickles!",
- "Hug incoming 🤗",
- "You’re doing great, love",
- "One more smile please 😊"
+ "kamu satu satunya yang aku suka! 💙",
+ "eh eh geli tipis!",
+ "woaahh maw peluk!",
+ "baguss sayangg!",
+ "lagi lagi lagi!"
 ];
 const COUPONS = [
  ["1 Free Hug", "valid forever"],
