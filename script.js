@@ -44,6 +44,8 @@ const COUPONS = [
  ["Snack Run", "your choice, my treat"],
  ["Listening Time", "no interrupting, promise"]
 ];
+const CAT_PICS = ["cheer1.GIF", "cheer2.GIF", "cheer3.GIF", "cheer4.GIF", "cheer5.GIF"];
+CAT_PICS.forEach(p => { new Image().src = p; });
 /* ====================================== */
 
 const $ = s => document.querySelector(s);
@@ -80,7 +82,7 @@ function go(id, push = true){
 }
 
 /* tombol & klik */
-let taps = 0;
+let taps = 0, catIdx = 0;
 document.addEventListener("click", e => {
   const sym = ["💙", "✦", "✧", "🐾", "💫"];
   popSpark(e.clientX, e.clientY, sym[Math.floor(Math.random() * sym.length)]);
@@ -88,6 +90,7 @@ document.addEventListener("click", e => {
   const cat = e.target.closest("#catTap");
   if (cat){
     cat.classList.remove("pop"); void cat.offsetWidth; cat.classList.add("pop");
+    if (cat.tagName === "IMG") cat.src = CAT_PICS[catIdx++ % CAT_PICS.length];
     cat.addEventListener("animationend", () => cat.classList.remove("pop"), { once: true });
     if (taps < 5){
       taps++;
