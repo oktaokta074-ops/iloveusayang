@@ -3,13 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sorry</title>
+<title>For You</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500&family=Libre+Baskerville&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="on-home">
+
+<button class="home-btn" data-home>⌂ Start</button>
 
 <section class="page active" id="home">
   <h1 class="script big" data-type></h1>
@@ -18,16 +20,15 @@
 </section>
 
 <section class="page" id="envelope">
-  <div class="envelope"><span class="flap"></span></div>
+  <div class="envelope" id="env"><span class="flap"></span></div>
   <div class="btn-stack">
-    <button class="btn" data-go="letter">Read</button>
+    <button class="btn" id="readBtn">Read</button>
     <button class="btn" data-go="time">I need more time</button>
   </div>
 </section>
 
 <section class="page scroll" id="letter">
   <h1 class="script big" data-type></h1>
-
   <div class="player" id="player">
     <img class="cover" id="cover" alt="cover">
     <div class="info">
@@ -38,9 +39,24 @@
     <button class="play" id="playBtn" aria-label="play">▶</button>
     <audio id="audio" loop></audio>
   </div>
-
   <div class="letter" id="letterText"></div>
-  <button class="btn" data-go="forgive">Continue</button>
+  <button class="btn" data-go="reasons">Continue</button>
+</section>
+
+<section class="page scroll" id="reasons">
+  <h1 class="script med" data-type></h1>
+  <p class="sub small">Tap each heart to open it</p>
+  <div class="cards" id="cards"></div>
+  <button class="btn" id="reasonsNext" data-go="cheer" disabled>Continue</button>
+</section>
+
+<section class="page scroll" id="cheer">
+  <h1 class="script med" data-type></h1>
+  <p class="sub small">Tap the cat 5 times for a surprise</p>
+  <div class="bubble" id="bubble">Psst... tap me!</div>
+  <img id="catTap" class="cat tap-cat" src="cat-idle.png" alt="">
+  <p class="count" id="tapCount">0 / 5</p>
+  <button class="btn" id="cheerNext" data-go="forgive" disabled>Continue</button>
 </section>
 
 <section class="page" id="forgive">
@@ -53,7 +69,14 @@
 <section class="page" id="yes">
   <h1 class="script med" data-type></h1>
   <img class="cat yes-cat" src="cat-happy.png" alt="">
-  <button class="btn bottom" data-go="promise">Continue</button>
+  <button class="btn bottom" data-go="coupons">Continue</button>
+</section>
+
+<section class="page scroll" id="coupons">
+  <h1 class="script med" data-type></h1>
+  <p class="sub small">Tap a coupon to redeem it</p>
+  <div class="coupons" id="couponList"></div>
+  <button class="btn" data-go="promise">Continue</button>
 </section>
 
 <section class="page" id="promise">
@@ -62,7 +85,10 @@
     <img class="cat" src="cat-hug.png" alt="">
     <h2 class="serif">I Love You, Love!</h2>
   </div>
-  <button class="btn bottom" data-go="yes">Back</button>
+  <div class="btn-row">
+    <button class="btn" data-back>Back</button>
+    <button class="btn" data-home>Back to start</button>
+  </div>
 </section>
 
 <section class="page" id="time">
@@ -71,7 +97,10 @@
     <h2 class="serif">I Love You, Love!</h2>
     <img class="cat" src="cat-heart.png" alt="">
   </div>
-  <button class="btn bottom" data-go="envelope">Back</button>
+  <div class="btn-row">
+    <button class="btn" data-back>Back</button>
+    <button class="btn" data-home>Back to start</button>
+  </div>
 </section>
 
 <script src="script.js"></script>
