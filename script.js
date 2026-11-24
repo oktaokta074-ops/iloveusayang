@@ -5,6 +5,7 @@ const CONFIG = {
 };
 const TEXT = {
   home: ["Hey, Love...", "A little corner of the internet, made just for you"],
+  envelope: "A letter for you",
   letter: "Hey, Love...",
   reasons: "A few things I love about you",
   cheer: "Cheer-up break!",
@@ -31,7 +32,7 @@ const REASONS = [
  "Being with you just feels like home"
 ];
 const CHEERS = [
- "You’re my favorite person 💗",
+ "You’re my favorite person 💙",
  "Hehe, that tickles!",
  "Hug incoming 🤗",
  "You’re doing great, love",
@@ -78,7 +79,26 @@ function go(id, push = true){
   }
 }
 
+/* tombol & klik */
+let taps = 0;
 document.addEventListener("click", e => {
+  const sym = ["💙", "✦", "✧", "🐾", "💫"];
+  popSpark(e.clientX, e.clientY, sym[Math.floor(Math.random() * sym.length)]);
+
+  const cat = e.target.closest("#catTap");
+  if (cat){
+    cat.classList.remove("pop"); void cat.offsetWidth; cat.classList.add("pop");
+    cat.addEventListener("animationend", () => cat.classList.remove("pop"), { once: true });
+    if (taps < 5){
+      taps++;
+      $("#tapCount").textContent = taps + " / 5";
+      $("#bubble").textContent = taps === 5 ? "Yay, unlocked! 🎉" : CHEERS[taps - 1];
+      if (taps === 5) $("#cheerNext").disabled = false;
+    } else {
+      $("#bubble").textContent = CHEERS[Math.floor(Math.random() * CHEERS.length)];
+    }
+    return;
+  }
   const b = e.target.closest("button");
   if (!b) return;
   if (b.dataset.go) go(b.dataset.go);
@@ -89,7 +109,7 @@ document.addEventListener("click", e => {
 /* amplop terbuka dulu baru ke surat */
 $("#readBtn").addEventListener("click", () => {
   $("#env").classList.add("open");
-  setTimeout(() => go("letter"), 700);
+  setTimeout(() => go("letter"), 1400);
 });
 
 /* surat */
@@ -107,7 +127,7 @@ playBtn.addEventListener("click", () => {
   else { audio.pause(); playBtn.textContent = "▶"; }
 });
 
-/* alasan (hati) */
+/* alasan */
 let opened = 0;
 REASONS.forEach(r => {
   const c = document.createElement("button");
@@ -118,23 +138,6 @@ REASONS.forEach(r => {
     if (++opened === REASONS.length) $("#reasonsNext").disabled = false;
   });
   $("#cards").appendChild(c);
-});
-
-/* tap kucing */
-let taps = 0;
-$("#catTap").addEventListener("click", e => {
-  const cat = e.currentTarget;
-  cat.classList.remove("pop"); void cat.offsetWidth; cat.classList.add("pop");
-  cat.addEventListener("animationend", () => cat.classList.remove("pop"), { once: true });
-  popHeart(e.clientX, e.clientY);
-  if (taps < 5){
-    taps++;
-    $("#tapCount").textContent = taps + " / 5";
-    $("#bubble").textContent = taps === 5 ? "Yay, unlocked! 🎉" : CHEERS[taps - 1];
-    if (taps === 5) $("#cheerNext").disabled = false;
-  } else {
-    $("#bubble").textContent = CHEERS[Math.floor(Math.random() * CHEERS.length)];
-  }
 });
 
 /* kupon */
@@ -150,9 +153,9 @@ COUPONS.forEach(([t, s]) => {
 });
 
 /* efek */
-function popHeart(x, y){
+function popSpark(x, y, s){
   const h = document.createElement("span");
-  h.className = "ph"; h.textContent = "💗";
+  h.className = "ph"; h.textContent = s;
   h.style.left = x + "px"; h.style.top = y + "px";
   document.body.appendChild(h); setTimeout(() => h.remove(), 1000);
 }
@@ -168,13 +171,53 @@ function confetti(n = 70){
     document.body.appendChild(c); setTimeout(() => c.remove(), 4600);
   }
 }
+
+/* latar: bintang berkelip + gelembung */
+const bg = $("#bg");
+for (let i = 0; i < 28; i++){
+  const s = document.createElement("span");
+  s.className = "star"; s.textContent = i % 3 ? "✦" : "✧";
+  s.style.left = Math.random() * 100 + "%";
+  s.style.top = Math.random() * 100 + "%";
+  s.style.fontSize = (8 + Math.random() * 14) + "px";
+  s.style.animationDelay = Math.random() * 3 + "s";
+  bg.appendChild(s);
+}
 setInterval(() => {
-  const h = document.createElement("span");
-  h.className = "fh"; h.textContent = "♥";
-  h.style.left = Math.random() * 100 + "vw";
-  h.style.fontSize = (12 + Math.random() * 22) + "px";
-  h.style.animationDuration = (7 + Math.random() * 6) + "s";
-  document.body.appendChild(h); setTimeout(() => h.remove(), 13500);
-}, 900);
+  const b = document.createElement("span"), d = 10 + Math.random() * 30;
+  b.className = "bub";
+  b.style.width = b.style.height = d + "px";
+  b.style.left = Math.random() * 100 + "%";
+  b.style.animationDuration = (9 + Math.random() * 7) + "s";
+  bg.appendChild(b); setTimeout(() => b.remove(), 16500);
+}, 1400);
+
+/* kucing cadangan kalau gambar tidak ketemu */
+function catSVG(m){
+  const eyes = m === "happy"
+    ? '<circle cx="76" cy="108" r="11" fill="#333"/><circle cx="124" cy="108" r="11" fill="#333"/><circle cx="72" cy="104" r="4" fill="#fff"/><circle cx="120" cy="104" r="4" fill="#fff"/>'
+    : m === "idle"
+    ? '<ellipse cx="76" cy="110" rx="8" ry="9" fill="#333"/><ellipse cx="124" cy="110" rx="8" ry="9" fill="#333"/>'
+    : '<path d="M66 112q10-14 20 0M114 112q10-14 20 0" stroke="#333" stroke-width="5" fill="none" stroke-linecap="round"/>';
+  const mouth = m === "happy"
+    ? '<ellipse cx="100" cy="130" rx="7" ry="9" fill="#f58aa8"/>'
+    : '<path d="M92 124q8 8 16 0" stroke="#333" stroke-width="4" fill="none" stroke-linecap="round"/>';
+  const extra = m === "happy"
+    ? '<text x="10" y="50" font-size="24" fill="#ffc2d1">✦</text><text x="160" y="40" font-size="28" fill="#ffc2d1">✦</text>'
+    : (m === "hug" || m === "heart") ? '<text x="120" y="195" font-size="72" fill="#f4829f">♥</text>' : "";
+  return '<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" stroke="#555" stroke-width="5">'
+    + '<polygon points="42,74 52,28 88,58" fill="#fde2e4"/><polygon points="158,74 148,28 112,58" fill="#fde2e4"/>'
+    + '<ellipse cx="100" cy="165" rx="48" ry="32" fill="#fff"/><ellipse cx="100" cy="108" rx="72" ry="58" fill="#fff"/>'
+    + '<g stroke="none"><circle cx="56" cy="128" r="10" fill="#ffd1d9"/><circle cx="144" cy="128" r="10" fill="#ffd1d9"/></g>'
+    + '<g stroke="none">' + eyes + '</g>' + mouth + '<g stroke="none">' + extra + '</g></svg>';
+}
+function swapCat(i){
+  if (!i.dataset.cat) return;
+  const w = document.createElement("div");
+  w.className = i.className; w.id = i.id; w.innerHTML = catSVG(i.dataset.cat);
+  i.replaceWith(w);
+}
+document.addEventListener("error", e => { if (e.target.tagName === "IMG") swapCat(e.target); }, true);
+document.querySelectorAll("img[data-cat]").forEach(i => { if (i.complete && i.naturalWidth === 0) swapCat(i); });
 
 go("home", false);
