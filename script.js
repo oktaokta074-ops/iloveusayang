@@ -1,19 +1,19 @@
 /* ============ EDIT DI SINI ============ */
 const CONFIG = {
-  yourName: "[Your Name]",
+  yourName: "Tri Utami",
   song: { title: "Keep Me", artist: "Novo Amor", cover: "cover.JPG", audio: "song.mp3" }
 };
 const TEXT = {
-  home: ["Hey, Love...", "A little corner of the internet, made just for you"],
-  envelope: "A letter for you",
-  letter: "Hey, Love...",
-  reasons: "A few things I love about you",
-  cheer: "Cheer-up break!",
-  forgive: "Can we get back to us, my love?",
-  yes: "Yeeees!!!",
-  coupons: "Your Love Coupons",
-  promise: "Always you, always us!",
-  time: "Take all the time you need, love"
+  home: ["Haii Sayangku...", "sudut kecil di internet, hanya untukmu."],
+  envelope: "surat untukmu",
+  letter: "Haii Sayangku...",
+  reasons: "Beberapa hal yang aku cintai darimu",
+  cheer: "Ayoo ayo ayo!",
+  forgive: "Ayo kita perbaiki lagi sama sama, ya?",
+  yes: "yeyeyeyyey!!!",
+  coupons: "kupon spesial untukmu",
+  promise: "always you, always us!",
+  time: "isokeeii sayangku, take ur time"
 };
 const LETTER = [
  "I’m writing this because I’ve been thinking about you. Ever since our little argument, things have felt a bit different between us, and I really don’t like it.",
