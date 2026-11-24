@@ -66,6 +66,7 @@ function go(id, push = true){
   timers.forEach(clearInterval); timers = [];
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   const page = document.getElementById(id);
+  if (!page){ alert("Halaman '" + id + "' tidak ketemu"); return go("home", false); }
   page.classList.add("active");
   document.body.classList.toggle("on-home", id === "home");
   window.scrollTo(0, 0);
