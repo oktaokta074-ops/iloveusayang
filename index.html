@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500&family=Libre+Baskerville&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="page active" id="home">
+  <h1 class="script big" data-type></h1>
+  <p class="sub" data-type-sub></p>
+  <button class="btn bottom" data-go="envelope">Start</button>
+</section>
+
+<section class="page" id="envelope">
+  <div class="envelope"><span class="flap"></span></div>
+  <div class="btn-stack">
+    <button class="btn" data-go="letter">Read</button>
+    <button class="btn" data-go="time">I need more time</button>
+  </div>
+</section>
+
+<section class="page scroll" id="letter">
+  <h1 class="script big" data-type></h1>
+
+  <div class="player" id="player">
+    <img class="cover" id="cover" alt="cover">
+    <div class="info">
+      <b id="songTitle">Song Title</b>
+      <div><span class="tag">Preview</span><span id="songArtist">Artist Name</span></div>
+      <div class="save">⊕ <span>Save on Spotify</span></div>
+    </div>
+    <button class="play" id="playBtn" aria-label="play">▶</button>
+    <audio id="audio" loop></audio>
+  </div>
+
+  <div class="letter" id="letterText"></div>
+  <button class="btn" data-go="forgive">Continue</button>
+</section>
+
+<section class="page" id="forgive">
+  <h1 class="script med" data-type></h1>
+  <img class="cat center-cat" src="cat-idle.png" alt="">
+  <button class="btn side left" data-go="yes">Yes</button>
+  <button class="btn side right" data-go="time">I need more time</button>
+</section>
+
+<section class="page" id="yes">
+  <h1 class="script med" data-type></h1>
+  <img class="cat yes-cat" src="cat-happy.png" alt="">
+  <button class="btn bottom" data-go="promise">Continue</button>
+</section>
+
+<section class="page" id="promise">
+  <h1 class="script med" data-type></h1>
+  <div class="row">
+    <img class="cat" src="cat-hug.png" alt="">
+    <h2 class="serif">I Love You, Love!</h2>
+  </div>
+  <button class="btn bottom" data-go="yes">Back</button>
+</section>
+
+<section class="page" id="time">
+  <h1 class="script med" data-type></h1>
+  <div class="row">
+    <h2 class="serif">I Love You, Love!</h2>
+    <img class="cat" src="cat-heart.png" alt="">
+  </div>
+  <button class="btn bottom" data-go="envelope">Back</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
