@@ -1,6 +1,6 @@
 /* ============ EDIT DI SINI ============ */
 const CONFIG = {
-  yourName: "Tri Utami",
+  yourName: "Adeo.",
   song: { title: "Keep Me", artist: "Novo Amor", cover: "cover.JPG", audio: "song.mp3" }
 };
 const TEXT = {
