@@ -1,7 +1,7 @@
 /* ============ EDIT DI SINI ============ */
 const CONFIG = {
   yourName: "[Your Name]",
-  song: { title: "Keep Me", artist: "Novo Amor", cover: "cover.jpg", audio: "song.mp3" }
+  song: { title: "Keep Me", artist: "Novo Amor", cover: "cover.JPG", audio: "song.mp3" }
 };
 const TEXT = {
   home: ["Hey, Love...", "A little corner of the internet, made just for you"],
