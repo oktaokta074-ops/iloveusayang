@@ -4,23 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>For You</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;500&family=Libre+Baskerville&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="on-home">
-
+<div id="bg"></div>
 <button class="home-btn" data-home>⌂ Start</button>
 
 <section class="page active" id="home">
   <h1 class="script big" data-type></h1>
   <p class="sub" data-type-sub></p>
+  <div class="bubble">Hi, you! 💙</div>
+  <img class="cat home-cat" data-cat="happy" src="cat-happy.png" alt="">
   <button class="btn bottom" data-go="envelope">Start</button>
 </section>
 
 <section class="page" id="envelope">
-  <div class="envelope" id="env"><span class="flap"></span></div>
+  <h1 class="script med" data-type></h1>
+  <p class="sub small">A little letter is waiting for you 💌</p>
+  <div class="env" id="env">
+    <div class="e-back"></div>
+    <div class="e-letter"><i></i><i></i><i></i></div>
+    <div class="e-left"></div><div class="e-right"></div><div class="e-bottom"></div>
+    <div class="e-flap"></div>
+    <div class="seal">♥</div>
+  </div>
   <div class="btn-stack">
     <button class="btn" id="readBtn">Read</button>
     <button class="btn" data-go="time">I need more time</button>
@@ -54,21 +62,25 @@
   <h1 class="script med" data-type></h1>
   <p class="sub small">Tap the cat 5 times for a surprise</p>
   <div class="bubble" id="bubble">Psst... tap me!</div>
-  <img id="catTap" class="cat tap-cat" src="cat-idle.png" alt="">
+  <img id="catTap" class="cat tap-cat" data-cat="idle" src="cat-idle.png" alt="">
   <p class="count" id="tapCount">0 / 5</p>
   <button class="btn" id="cheerNext" data-go="forgive" disabled>Continue</button>
 </section>
 
 <section class="page" id="forgive">
   <h1 class="script med" data-type></h1>
-  <img class="cat center-cat" src="cat-idle.png" alt="">
-  <button class="btn side left" data-go="yes">Yes</button>
-  <button class="btn side right" data-go="time">I need more time</button>
+  <div class="bubble">pretty please? 🥺</div>
+  <img class="cat center-cat" data-cat="idle" src="cat-idle.png" alt="">
+  <div class="choices">
+    <button class="btn" data-go="yes">Yes</button>
+    <button class="btn" data-go="time">I need more time</button>
+  </div>
 </section>
 
 <section class="page" id="yes">
   <h1 class="script med" data-type></h1>
-  <img class="cat yes-cat" src="cat-happy.png" alt="">
+  <img class="cat yes-cat" data-cat="happy" src="cat-happy.png" alt="">
+  <p class="sub small">I knew it! 💙</p>
   <button class="btn bottom" data-go="coupons">Continue</button>
 </section>
 
@@ -82,7 +94,7 @@
 <section class="page" id="promise">
   <h1 class="script med" data-type></h1>
   <div class="row">
-    <img class="cat" src="cat-hug.png" alt="">
+    <img class="cat" data-cat="hug" src="cat-hug.png" alt="">
     <h2 class="serif">I Love You, Love!</h2>
   </div>
   <div class="btn-row">
@@ -95,7 +107,7 @@
   <h1 class="script med" data-type></h1>
   <div class="row">
     <h2 class="serif">I Love You, Love!</h2>
-    <img class="cat" src="cat-heart.png" alt="">
+    <img class="cat" data-cat="heart" src="cat-heart.png" alt="">
   </div>
   <div class="btn-row">
     <button class="btn" data-back>Back</button>
