@@ -5,7 +5,7 @@ const CONFIG = {
 };
 
 const TEXT = {
-  home: ["Haii Sayangku...", "sudut kecil di internet, hanya untukmu."],
+  home: ["Haii Sayangku...", "A little corner of the internet, just for u, sayangku."],
   envelope: "surat untukmu",
   letter: "Haii Sayangku...",
   reasons: "Beberapa hal yang aku cintai darimu",
