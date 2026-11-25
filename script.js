@@ -18,10 +18,10 @@ const TEXT = {
 };
 
 const LETTER = [
-  "im writing this because my heart feels so heavy knowing how much I hurt you today. Ini bukan masalah sepele, dan aku benar benar menyesal udaa bikin kamu kecewa untuk yang kesekian kalinya.",
+  "im writing this because my heart feels so heavy knowing how much I hurt u today. Ini bukan masalah sepele, dan aku benar benar menyesal udaa bikin kamu kecewa untuk yang kesekian kalinya.",
   "u mean the world to me, sayang. aku nggaa mau “kita” jadi 'aku kamu'. your feelings are completely valid, dan kamu pantas untuk marah sama aku. tolong jangan minta maaf yaa, karena kamu ga salah sama sekali.",
-  "aku kangen kamu banget banget, kangen dengerin kamu cerita, kangen peluk kamu, aku ga bisa stop mikirin kamu, kangen kamu luar biasaa. im not going anywhere, aku engga ngelepas kamu by, aku hanya ingin memberimh space, and im right here waiting whenever u feel ready.",
-  "so here’s a tiny gift: a few things on the next pages to hopefully make u smile. no pressure, no rush. im right here.",
+  "aku kangen kamu banget banget, kangen dengerin kamu cerita, kangen peluk kamu, aku ga bisa stop mikirin kamu, kangen kamu luar biasaa. im not going anywhere, aku engga ngelepas kamu by, aku hanya ingin memberimu space, and im right here waiting whenever u feel ready.",
+  "so heres a tiny gift: a few things on the next pages to hopefully make u smile. no pressure, no rush. im right here.",
   "With all my love,",
   CONFIG.yourName
 ];
