@@ -134,7 +134,7 @@ document.addEventListener("click", e => {
       taps++;
       if ($("#tapCount")) $("#tapCount").textContent = taps + " / 5";
       if ($("#bubble")) {
-        $("#bubble").textContent = taps === 5 ? "Yay, unlocked! 🎉" : CHEERS[taps - 1];
+        $("#bubble").textContent = taps === 5 ? "Yay, terbukaa deh! 🎉" : CHEERS[taps - 1];
       }
       if (taps === 5 && $("#cheerNext")) $("#cheerNext").disabled = false;
     } else if ($("#bubble")) {
