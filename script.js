@@ -44,10 +44,10 @@ const CHEERS = [
 ];
 
 const COUPONS = [
-  ["1 mokoyo meimei milktea", "with or without mata meimei, ur choice."],
-  ["Movie Night", "you pick the movie"],
-  ["Snack Run", "your choice, my treat"],
-  ["Listening Time", "no interrupting, promise"]
+["1 mokoyo meimei milktea", "with or without mata meimei, ur choice."],
+  ["Nonton bioskop", "nonton apa aja yang kamu mau"],
+  ["Jajanin apa aja di kantin", "your choice, my treat"],
+  ["Open heart pass", "kamu boleh nanya apa aja atau ngomongin hal yang bikin kamu masih ragu"]
 ];
 
 const CAT_PICS = ["cheer1.GIF", "cheer2.GIF", "cheer3.GIF", "cheer4.GIF", "cheer5.GIF"];
