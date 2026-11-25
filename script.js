@@ -27,7 +27,7 @@ const LETTER = [
 ];
 
 const REASONS = [
-  "Your smile makes my whole day better",
+  "Your dedication in everything u do—from OSIS, Paskib, to PMR, im always so proud of u.",
   "You make even boring moments fun",
   "You’re the best listener I know",
   "Your laugh is my favorite sound",
