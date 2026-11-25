@@ -28,11 +28,11 @@ const LETTER = [
 
 const REASONS = [
   "Your dedication in everything u do—from OSIS, Paskib, to PMR, im always so proud of u.",
-  "You make even boring moments fun",
-  "You’re the best listener I know",
-  "Your laugh is my favorite sound",
-  "You care so much about the people you love",
-  "Being with you just feels like home"
+  "How much effort u always put into us and into trying to make things work.",
+  "How u make me want to be a better, more thoughtful version of myself—not just in words, but in actions.",
+  "The soft spot I have for u that never really fades, no matter how messy things get.",
+  "How having u in my life makes ordinary days feel less lonely and more meaningful.",
+  "melihat senyum manismu, sayangku cintaku duniaku."
 ];
 
 const CHEERS = [
