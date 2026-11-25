@@ -16,10 +16,10 @@ const TEXT = {
   time: "isokeeii sayangku, take ur time"
 };
 const LETTER = [
- "I’m writing this because I’ve been thinking about you. Ever since our little argument, things have felt a bit different between us, and I really don’t like it.",
- "I don’t want a small disagreement to sit between us like a wall. Whatever was said, it never changes how much you mean to me. Your feelings matter, and I want to hear every one of them whenever you’re ready.",
- "You’re my favorite person to laugh with, to complain with, and to do absolutely nothing with. I miss that easy us.",
- "So here’s a tiny gift: a few things on the next pages to hopefully make you smile. No pressure, no rush. I’m right here.",
+ "im writing this because my heart feels so heavy knowing how much I hurt you today. Ini bukan masalah sepele, dan aku benar benar menyesal udaa bikin kamu kecewa untuk yang kesekian kalinya.",
+ "u mean the world to me, sayang. aku nggaa mau “kita” jadi "aku kamu". your feelings are completely valid, dan kamu pantas untuk marah sama aku. tolong jangan minta maaf yaa, karena kamu ga salah sama sekali.",
+ "aku kangen kamu banget banget, kangen dengerin kamu cerita, kangen peluk kamu, aku ga bisa stop mikirin kamu, kangen kamu luar biasaa. im not going anywhere, aku engga ngelepas kamu by, aku hanya ingin memberimh space, and im right here waiting whenever u feel ready.",
+ "so here’s a tiny gift: a few things on the next pages to hopefully make u smile. no pressure, no rush. im right here.",
  "With all my love,",
  CONFIG.yourName
 ];
