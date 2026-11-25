@@ -44,7 +44,7 @@ const CHEERS = [
 ];
 
 const COUPONS = [
-  ["1 Free Hug", "valid forever"],
+  ["1 mokoyo meimei milktea", "with or without mata meimei, ur choice."],
   ["Movie Night", "you pick the movie"],
   ["Snack Run", "your choice, my treat"],
   ["Listening Time", "no interrupting, promise"]
